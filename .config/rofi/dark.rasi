@@ -1,46 +1,51 @@
+configuration {
+	show-icons: true;
+}
+
 * {
-    background-color:  transparent;
+    background-color: #2C2D2F;
     
-    background-primary-color: #F7F8F6;
+    background-primary-color: #1F2022;
 
-    foreground:  #ffeedd;
-    backlight:   #F7F8F6;
+    foreground:  #2C2D2F;
+    backlight:   #1F2022;
     line-color: transparent;
-    background-search-color: #F7F8F6;
-    line-search-color: #1F2022;
+    background-search-color: #2C2D2F;
+    line-search-color: #2C2D2F;
 
 
-    background-selected-color: #1F2022;
-    background-selected-urgent-color: #1F2022;
-    background-selected-active-color: #1F2022;
+    background-selected-color: #2C2D2F;
+    background-selected-urgent-color: #F7F8F6;
+    background-selected-active-color: #F7F8F6;
 
-    item-primary-color: #F7F8F6;
-    item-primary-alternate-color: #F7F8F6;
+    item-primary-color: #1F2022;
+    item-primary-alternate-color: #1F2022;
 
-    item-urgent-color: #F7F8F6;
-    item-urgent-alternate-color: #F7F8F6;
+    item-urgent-color: #1F2022;
+    item-urgent-alternate-color: #1F2022;
 
-    item-active-color: #F7F8F6;
-    item-active-alternate-color: #F7F8F6;
+    item-active-color: #1F2022;
+    item-active-alternate-color: #1F2022;
 
-    text-primary-color: #1F2022;
-    text-primary-alternate-color: #1F2022;
+    text-primary-color: #F7F8F6;
+    text-primary-alternate-color: #F7F8F6;
 
-    text-urgent-color: #1F2022;
-    text-urgent-alternate-color: #1F2022;
+    text-urgent-color: #F7F8F6;
+    text-urgent-alternate-color: #F7F8F6;
     
-    text-active-color: #1F2022;
-    text-active-alternate-color: #1F2022;
+    text-active-color: #F7F8F6;
+    text-active-alternate-color: #F7F8F6;
 
     text-selected-color: #F7F8F6;
     text-selected-urgent-color: #F7F8F6;
     text-selected-active-color: #F7F8F6;
     
-    scrollbar-color: #F7F8F6;
+    scrollbar-color: #2C2D2F;
 
-    transparent: rgba(0,0,0,0);
+    transparent: rgba(255,255,255,0);
     font: "Source Code Pro 12";
 }
+
 
 window {
     location: center;
@@ -49,6 +54,7 @@ window {
     border-radius: 15px;
     background-color: @transparent;
     spacing: 0;
+    width: 35em;
     children:  [mainbox];
     orientation: horizontal;
 }
@@ -73,21 +79,26 @@ inputbar {
     background-color: @background-search-color;
     
     border-radius:  15px 15px 15px 15px;
-    font: "Source Code Pro 16";
-    children: [ entry,search-turtle ];
+    font: "Source Code Pro 12";
+    children: [ entry,search ];
 }
 
-search-turtle {
-    content: "xddd";
+search {
+    content: "uwu";
+    color: @text-primary-color;
     horizontal-align: 0.5;
+}
+entry {
+    width: 100%;
 }
 
 listview {
     padding: 0px;
     margin: 12px 0px 0px 0px;
+    border: 0px;
     background-color: @background-primary-color;
     dynamic: false;
-    lines: 8;
+    lines: 6;
     border-radius:  0px 0px 15px 15px;
 }
 
@@ -105,7 +116,7 @@ element-text {
 
 entry,prompt,case-indicator {
     text-font: inherit;
-    text-color:inherit;
+    text-color: @text-primary-color;
 }
 
 prompt {
@@ -154,14 +165,9 @@ element.selected.active {
 }
 
 scrollbar {
-    width:        15px ;
+    width:        0px ;
     border:       0;
-    handle-width: 8px ;
+    handle-width: 0px ;
     padding:      0;
     background-color: @scrollbar-color;
-}
-
-configuration {
-	show-icons: true;
-
 }
