@@ -4,7 +4,7 @@ root_file="~/.inst"
 mkdir root_file
 
 # Librerias para Alacritty
-sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo apt -y install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 # libegl1-mesa-dev en caso de usar nvidia
 
 # Instalamos RUSTUP

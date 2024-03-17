@@ -1,5 +1,5 @@
 # Instalamos ZSH
-sudo apt install zsh
+sudo apt -y install zsh
 
 # Configuramos ZSH como SHELL por defecto
 sudo chsh -s $(which zsh)
