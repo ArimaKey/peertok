@@ -8,7 +8,7 @@ Este proyecto busca personalizar el entorno Linux de Parrot, adaptándolo a las 
 
 ## Features
 
-- Modo oscuro para picom
+- Modo oscuro para rofi
 - Cambio del fondo de pantalla predeterminado
 
 
@@ -50,11 +50,9 @@ Comando acotado
 
 ## Por desarrollar
 
-- Implementar personalización en la polybar debido a que esta usando la configuración por defecto.
+- Integrar atajos por teclado para diversos programas.
 
-- Integrar atajos por teclado para la apertura del navegador.
-
-- Personalizar la consola mucho más debido a que esta utilizando un estilo por defecto.
+- Personalizar la consola mucho más debido a que esta utilizando un estilo por defecto de ohmyzsh!.
 
 
 ## Autor
