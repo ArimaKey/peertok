@@ -57,7 +57,7 @@ Comando acotado
 
 ## Autor
 
-- [@ArimaKey](https://www.https://github.com/ArimaKey)
+- [ArimaKey](https://github.com/ArimaKey)
 
 
 ## Licencia
