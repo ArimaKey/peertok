@@ -12,6 +12,6 @@ size = 11.25
 builtin_box_drawing = true
 
 [colors.primary]
-foreground = "#d8d8d8"
-background = "#1F2022"
+foreground = "#D3DBE0"
+background = "#171719"
 
