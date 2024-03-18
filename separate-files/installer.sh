@@ -1,17 +1,26 @@
 #!/bin/bash
 
+# Función para verificar si un paquete está instalado
 package_installed() {
     dpkg -l | grep -q "^ii  $1 "
 }
 
-while read -r package_name; do
+# Separar la cadena de entrada en nombres de paquetes
+IFS=' ' read -ra packages <<< "$1"
+
+# Instalación de paquetes uno por uno
+for package_name in "${packages[@]}"; do
+    # Verificamos si el paquete ya está instalado
     if package_installed "$package_name"; then
-        echo "$package_name ya está instalado"
+        echo "[✓] $package_name ya está instalado"
     else
-        sudo apt -y install $package_name 2>&1 | \
-            pv -pterb | \
-            while read -r line; do
-                printf "Instalando %s: %s\n" "$package_name" "$line"
-            done
+        # Instalamos el paquete
+        echo "[-] Instalando $package_name"
+        sudo apt-get install $package_name > /dev/null 2>&1
+        if [ $? -eq 0 ]; then
+            echo -e "   [✓] $package_name se instaló correctamente"
+        else
+            echo -e "   [-] $package_name no se instaló correctamente"
+        fi
     fi
 done

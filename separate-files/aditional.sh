@@ -1,2 +1,3 @@
 sudo cp -r ./resources/Counsine_Font /usr/share/fonts/truetype/
-sudo fc-cache -f -v
+echo "Cargando fuentes"
+sudo fc-cache -f -v >/dev/null 2>&1
