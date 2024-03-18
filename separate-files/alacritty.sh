@@ -4,7 +4,7 @@ root_file="~/.inst"
 mkdir root_file
 
 # Librerias para Alacritty
-sudo apt -y install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+sudo echo "cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3" | ./separate-files/installer.sh
 # libegl1-mesa-dev en caso de usar nvidia
 
 # Instalamos RUSTUP
@@ -15,7 +15,8 @@ rustup override set stable
 rustup update stable
 
 # Clonamos Alacritty
-git -C $root_file clone https://github.com/alacritty/alacritty.git
+echo "Clonando Alacritty "
+git -C $root_file clone https://github.com/alacritty/alacritty.git | pv -p -t -e -r -a > /ruta/al/directorio/destino
 
 # Instalamos Alacritty
 cargo build --release "$root_file/alacritty/alacritty"
