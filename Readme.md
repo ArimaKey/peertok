@@ -14,7 +14,9 @@ Este proyecto busca personalizar el entorno Linux de Parrot, adaptándolo a las 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/ArimaKey/peertok/blob/main/images/imagen_01.png?raw=true)
+![App Screenshot](https://github.com/ArimaKey/peertok/blob/main/images/imagen_02.png?raw=true)
+![App Screenshot](https://github.com/ArimaKey/peertok/blob/main/images/imagen_03.png?raw=true)
 
 
 ## Instalación
