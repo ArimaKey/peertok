@@ -36,10 +36,10 @@ Asignamos permisos de ejecución
   chmod +x install.sh
 ```   
 
-Una vez clonado debemos ejecutar usando bash el script principal `install.sh`
+Una vez clonado debemos ejecutar como superusuario el script principal `install.sh`
 
 ```bash
-  bash ./install.sh
+  sudo bash ./install.sh
 ```
 
 Comando acotado
