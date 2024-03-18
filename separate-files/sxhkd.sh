@@ -3,6 +3,11 @@ root_file="$HOME/.inst"
 # Instalamos sxhkd
 sudo apt -y install sxhkd
 
+if [ $? -ne 0 ]; then
+    echo -e " \n\nSXHKD no se instalo correctamente"
+    exit 0
+fi
+
 # Creamos las carpeta de configuración de sxhkd
 mkdir -p ~/.config/sxhkd
 
@@ -13,6 +18,11 @@ cp -r ./.config/sxhkd ~/.config/
 # Instalamos bspwm
 sudo apt -y install bspwm
 
+if [ $? -ne 0 ]; then
+    echo -e " \n\nBSPWM no se instalo correctamente"
+    exit 0
+fi
+
 # Creamos la carpeta de configación de bspwm
 mkdir -p ~/.config/bspwm
 
@@ -20,8 +30,14 @@ mkdir -p ~/.config/bspwm
 cp -r ./.config/bspwm ~/.config/
 chmod +x ~/.config/bspwm/bspwmrc
 
+echo "Instalando Rofi..."
 # Instalamos rofi
 sudo apt -y install rofi
+
+if [ $? -ne 0 ]; then
+    echo -e " \n\nRofi no se instalo correctamente"
+    exit 0
+fi
 
 # instalamos la polybar
 sudo apt -y install polybar
