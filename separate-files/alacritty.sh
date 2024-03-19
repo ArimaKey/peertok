@@ -23,7 +23,7 @@ git -C $root_file clone https://github.com/alacritty/alacritty.git > /dev/null 2
 
 echo "[🔨] Building Alacritty"
 # Instalamos Alacritty
-cargo build --release "$root_file/alacritty/alacritty" > /dev/null 2>&1
+cargo build --manifest-path="$root_file/alacritty/alacritty/Cargo.toml" --release > /dev/null 2>&1
 
 # Ejecutamos
 echo "[°] Revisando Instalacion"
