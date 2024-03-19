@@ -4,7 +4,7 @@ root_file="$HOME/.inst"
 sudo ./separate-files/installer.sh "rofi"
 
 # Copiamos la configuración a la carpeta .config
-cp -r ./.config/rofi ~/.config/
+cp -r ./.config/rofi $HOME/.config/
 
 # Lo asignamos como archivo de configuración
-rofi -dump-theme > ~/.config/rofi/dark.rasi
+rofi -dump-theme > $HOME/.config/rofi/dark.rasi

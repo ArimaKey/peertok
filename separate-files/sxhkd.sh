@@ -5,29 +5,29 @@ sudo ./separate-files/installer.sh "sxhkd"
 
 
 # Creamos las carpeta de configuración de sxhkd
-mkdir -p ~/.config/sxhkd
+mkdir -p $HOME/.config/sxhkd
 # Copiamos la configuración de sxhkd
-cp -r ./.config/sxhkd ~/.config/
+cp -r ./.config/sxhkd $HOME/.config/
 
 
 # Instalamos bspwm
 sudo ./separate-files/installer.sh "bspwm"
 
 # Creamos la carpeta de configación de bspwm
-mkdir -p ~/.config/bspwm
+mkdir -p $HOME/.config/bspwm
 
 # Copiamos las configuraciones para bspwm y le damos permisos de ejecución
-cp -r ./.config/bspwm ~/.config/
-chmod +x ~/.config/bspwm/bspwmrc
+cp -r ./.config/bspwm $HOME/.config/
+chmod +x $HOME/.config/bspwm/bspwmrc
 
 # instalamos la polybar
 sudo ./separate-files/installer.sh "polybar"
 
 # Carpeta de Configuración del polybar
-mkdir -p ~/.config/polybar/
+mkdir -p $HOME/.config/polybar/
 
 # Copiar la configuracion para la polybar
-cp -r ./.config/polybar ~/.config/
+cp -r ./.config/polybar $HOME/.config/
 chmod +x $HOME/.config/polybar/launch.sh
 
 # Instalamos feh
