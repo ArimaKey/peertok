@@ -1,5 +1,5 @@
 #! /bin/bash
-root_file="~/.inst"
+root_file="$HOME/.inst"
 
 mkdir root_file
 
