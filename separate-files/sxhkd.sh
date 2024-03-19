@@ -41,9 +41,9 @@ cp ./resources/wallpaper.jpg $root_file/wallpapers/
 
 # Instalando dependecias adicionales
 sudo ./separate-files/installer.sh "libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev libxext-dev meson ninja-build uthash-dev"
-sudo ./separate-files/installer.sh "libpcre3 libpcre3-dev"
+sudo ./separate-files/installer.sh "libpcre3 libpcre3-dev libxcb-xinerama0-dev"
 
-
+echo "[↓] Clonando Picom"
 # Clonar el repositorio de GitHub en el directorio base
 git -C "$root_file" clone https://github.com/ibhagwan/picom.git > /dev/null 2>&1
 
@@ -51,11 +51,16 @@ git -C "$root_file" clone https://github.com/ibhagwan/picom.git > /dev/null 2>&1
 git -C "$root_file/picom" submodule update --init --recursive --jobs 8 > /dev/null 2>&1
 
 # Crear un directorio de construcción separado
-build_dir="$root_file/picom/build" > /dev/null 2>&1
+
+build_dir="$root_file/picom/build"
 
 # Configurar y compilar picom
+echo "[⚙️] Configurando la instalacion de picom"
 meson --buildtype=release -Dprefix=/usr/local "$build_dir" "$root_file/picom" > /dev/null 2>&1
+echo "[🔨] Building Picom"
 ninja -C "$build_dir" -j $(nproc) > /dev/null 2>&1
 
 # Instalar picom
+echo -e "   [-] Instalando Picom"
 sudo ninja -C "$build_dir" install
+echo -e "   [✓] Picom se instaló correctamente"
