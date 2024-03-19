@@ -1,5 +1,5 @@
 
-# PeerTok
+# PeerTok [Aun no funcionan los scripts, usar los dotfiles]
 
 Este proyecto busca personalizar el entorno Linux de Parrot, adaptándolo a las necesidades del usuario. Incluye modificaciones en la interfaz, configuraciones y selección de software para ofrecer una experiencia optimizada en seguridad y funcionalidad
 
