@@ -1,7 +1,7 @@
 #! /bin/bash
 root_file="$HOME/.inst"
 
-mkdir root_file
+mkdir $root_file
 
 # Librerias para Alacritty
 sudo ./separate-files/installer.sh "cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3"
