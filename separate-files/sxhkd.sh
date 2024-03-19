@@ -45,17 +45,17 @@ sudo ./separate-files/installer.sh "libpcre3 libpcre3-dev"
 
 
 # Clonar el repositorio de GitHub en el directorio base
-git -C "$root_file" clone https://github.com/ibhagwan/picom.git | pv -p -t -e -r -a > /ruta/al/directorio/destino
+git -C "$root_file" clone https://github.com/ibhagwan/picom.git > /dev/null 2>&1
 
 # Actualizar los submódulos
-git -C "$root_file/picom" submodule update --init --recursive --jobs 8 | pv -p -t -e -r -a > /ruta/al/directorio/destino
+git -C "$root_file/picom" submodule update --init --recursive --jobs 8 > /dev/null 2>&1
 
 # Crear un directorio de construcción separado
-build_dir="$root_file/picom/build"
+build_dir="$root_file/picom/build" > /dev/null 2>&1
 
 # Configurar y compilar picom
-meson --buildtype=release -Dprefix=/usr/local "$build_dir" "$root_file/picom"
-ninja -C "$build_dir" -j $(nproc)
+meson --buildtype=release -Dprefix=/usr/local "$build_dir" "$root_file/picom" > /dev/null 2>&1
+ninja -C "$build_dir" -j $(nproc) > /dev/null 2>&1
 
 # Instalar picom
 sudo ninja -C "$build_dir" install
