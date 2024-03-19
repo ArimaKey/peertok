@@ -16,7 +16,7 @@ for package_name in "${packages[@]}"; do
     else
         # Instalamos el paquete
         echo "[-] Instalando $package_name"
-        sudo apt-get install $package_name > /dev/null 2>&1
+        sudo apt -y install $package_name > /dev/null 2>&1
         if [ $? -eq 0 ]; then
             echo -e "   [✓] $package_name se instaló correctamente"
         else
