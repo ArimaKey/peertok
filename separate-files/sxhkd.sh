@@ -28,6 +28,7 @@ mkdir -p $HOME/.config/polybar/
 
 # Copiar la configuracion para la polybar
 cp -r ./.config/polybar $HOME/.config/
+rm -f $HOME/.config/polybar/config
 chmod +x $HOME/.config/polybar/launch.sh
 
 # Instalamos feh
