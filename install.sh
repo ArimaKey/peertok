@@ -31,6 +31,7 @@ function apt {
 }
 
 function pacman {
+	bash ./separate-files/pacman/ly.sh
 	bash ./separate-files/pacman/alacritty.sh
 	bash ./separate-files/pacman/zsh.sh
 	bash ./separate-files/pacman/desktop.sh
