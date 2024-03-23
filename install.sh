@@ -23,6 +23,7 @@ function preguntar {
 }
 
 function apt {
+	bash ./separate-files/apt/ly.sh
 	bash ./separate-files/apt/alacritty.sh
 	bash ./separate-files/apt/zsh.sh
 	bash ./separate-files/apt/desktop.sh
@@ -31,6 +32,7 @@ function apt {
 }
 
 function pacman {
+	bash ./separate-files/pacman/requirements.sh
 	bash ./separate-files/pacman/ly.sh
 	bash ./separate-files/pacman/alacritty.sh
 	bash ./separate-files/pacman/zsh.sh
