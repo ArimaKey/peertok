@@ -1,10 +1,10 @@
 #! /bin/bash
 root_file="$HOME/.inst"
 
-mkdir $root_file
+mkdir $root_file > /dev/null 2>&1
 
 # Librerias para Alacritty
-sudo ./separate-files/installer.sh "cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3"
+sudo ./separate-files/apt/installer.sh "cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3"
 
 # libegl1-mesa-dev en caso de usar nvidia
 
@@ -13,9 +13,9 @@ echo "[-] Instalando Rustup"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y > /dev/null 2>&1
 
 # Post instalacion
-. "$HOME/.cargo/env"
-rustup override set stable
-rustup update stable
+. "$HOME/.cargo/env" > /dev/null 2>&1
+rustup override set stable > /dev/null 2>&1
+rustup update stable > /dev/null 2>&1
 
 # Clonamos Alacritty
 echo "[↓] Clonando Alacritty"
@@ -31,7 +31,7 @@ infocmp alacritty > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
     echo "[!] Solucionando problemas"
-    sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+    sudo tic -xe alacritty,alacritty-direct extra/alacritty.info 
 fi
 
 echo "[+] Agregando Alacritty al escritorio"
@@ -44,4 +44,4 @@ sudo update-desktop-database > /dev/null 2>&1
 echo "[⚙️] Cargando la configuración de alacritty"
 
 # Cargamos la configuración de Alacritty
-cp -r ./.config/alacritty $HOME/.config/alacritty 2>&1
+cp -r ./.config/alacritty $HOME/.config/alacritty > /dev/null 2>&1

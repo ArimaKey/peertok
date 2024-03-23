@@ -1,5 +1,5 @@
 # Instalamos ZSH
-sudo ./separate-files/installer.sh "zsh"
+sudo ./separate-files/pacman/installer.sh "zsh"
 
 echo "[⚙️] Cambiando la terminal por defecto"
 # Configuramos ZSH como SHELL por defecto
